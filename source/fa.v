@@ -1,11 +1,11 @@
 module fa (
-    input a,
-    input b,
-    input cin,
+    input  a,
+    input  b,
+    input  cin,
     output s,
     output cout
 );
-    always @* begin
+    always @(*) begin
         // implement 1-bit full-adder logic here
         s = 0;
         cout = 0;
