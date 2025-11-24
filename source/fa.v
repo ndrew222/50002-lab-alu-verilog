@@ -6,8 +6,7 @@ module fa (
     output cout
 );
     always @(*) begin
-        // implement 1-bit full-adder logic here
-        s = 0;
-        cout = 0;
+        s = a ^ b ^ cin;
+        cout = (a & b) | (b & cin) | (a & cin);
     end
 endmodule

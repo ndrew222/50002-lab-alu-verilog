@@ -9,11 +9,17 @@ module adder #(
     output            v, // overflow flag
     output            n  // negative/sign flag
 );
-    always @(*) begin
-        // implement adder/subtractor logic here
-        out = 0;
-        z   = 0;
-        v   = 0;
-        n   = 0;
-    end
+    wire [SIZE-1:0] xb;
+    wire c;
+    assign xb = b ^ {SIZE{alufn[0]}};
+    assign v  = (a[SIZE-1] & xb[SIZE-1] & ~out[SIZE-1]) | (~a[SIZE-1] & ~xb[SIZE-1] & out[SIZE-1]);
+    assign z  = ~|out;
+    assign n  = out[SIZE-1];
+    rca ripple_carry_adder (
+        .a(a),
+        .b(xb),
+        .cin(alufn[0]),
+        .cout(c),
+        .s(out)
+    );
 endmodule
