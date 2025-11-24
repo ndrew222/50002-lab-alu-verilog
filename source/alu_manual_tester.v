@@ -1,11 +1,11 @@
 module alu_manual_tester (
-    input clk,  // clock
-    input rst,  // reset
-    input [4:0] io_button,
-    input [23:0] io_dip,
+    input         clk,         // clock
+    input         rst,         // reset
+    input   [4:0] io_button,
+    input  [23:0] io_dip,
     output [23:0] io_led,
-    output [6:0] io_segment,
-    output [3:0] io_select
+    output  [6:0] io_segment,
+    output  [3:0] io_select
 );
 
     reg [31:0] a;
@@ -26,7 +26,7 @@ module alu_manual_tester (
         .out(alu_out)
     );
 
-    always @(posedge clk) begin
+    always @(*) begin
         // implement alu tester logic here
         io_led = 24'b0;
         io_segment = 7'hFF;
