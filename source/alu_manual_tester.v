@@ -17,13 +17,13 @@ module alu_manual_tester (
     wire [31:0] alu_out;
 
     alu alu (
-            .a(a),
-            .b(b),
-            .alufn(alufn),
-            .z(z),
-            .v(v),
-            .n(n),
-            .out(alu_out)
+        .a(a),
+        .b(b),
+        .alufn(alufn),
+        .z(z),
+        .v(v),
+        .n(n),
+        .out(alu_out)
     );
 
     always @(posedge clk) begin
