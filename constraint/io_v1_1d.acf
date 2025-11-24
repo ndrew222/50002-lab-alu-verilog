@@ -1,4 +1,11 @@
 PINOUT(V1), STANDARD(LVCMOS33) {
+    /*
+        the pinouts are in a 1D bus because
+        it's too complicated to map the 2D array
+        in the default constraints file with Verilog
+        because standard Verilog does not support
+        multi-dimensional arrays for top-level ports.
+    */
     pin io_led[0] B21
     pin io_led[1] B20
     pin io_led[2] B18
