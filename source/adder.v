@@ -11,14 +11,14 @@ module adder #(
 );
     wire [SIZE-1:0] xb;
     wire c;
-    assign xb = b ^ {SIZE{alufn[0]}};
+    assign xb = b ^ {SIZE{alufn0}};
     assign v  = (a[SIZE-1] & xb[SIZE-1] & ~out[SIZE-1]) | (~a[SIZE-1] & ~xb[SIZE-1] & out[SIZE-1]);
     assign z  = ~|out;
     assign n  = out[SIZE-1];
     rca ripple_carry_adder (
         .a(a),
         .b(xb),
-        .cin(alufn[0]),
+        .cin(alufn0),
         .cout(c),
         .s(out)
     );
