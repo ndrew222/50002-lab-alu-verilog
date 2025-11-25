@@ -1,11 +1,11 @@
 module alu (
-    input      [31:0] a,
-    input      [31:0] b,
-    input       [5:0] alufn,
-    output reg [31:0] out,
-    output reg        z,
-    output reg        v,
-    output reg        n
+    input  [31:0] a,
+    input  [31:0] b,
+    input   [5:0] alufn,
+    output [31:0] out,
+    output        z,
+    output        v,
+    output        n
 );
 
     always @(*) begin
