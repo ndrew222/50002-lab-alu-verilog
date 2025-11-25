@@ -3,7 +3,7 @@ module adder #(
 ) (
     input  [SIZE-1:0] a,
     input  [SIZE-1:0] b,
-    input       [5:0] alufn,
+    input             alufn0,
     output [SIZE-1:0] out,
     output            z, // zero flag
     output            v, // overflow flag
