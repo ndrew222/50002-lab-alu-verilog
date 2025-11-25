@@ -19,9 +19,5 @@ module alu (
 
     always @(*) begin
         // implement alu logic here
-        out = 0;
-        z   = 0;
-        v   = 0;
-        n   = 0;
     end
 endmodule
