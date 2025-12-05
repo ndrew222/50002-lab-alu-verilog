@@ -5,8 +5,6 @@ module fa (
     output s,
     output cout
 );
-    always @(*) begin
-        s = a ^ b ^ cin;
-        cout = (a & b) | (b & cin) | (a & cin);
-    end
+    assign s = a ^ b ^ cin;
+    assign cout = (a & b) | (b & cin) | (a & cin);
 endmodule
