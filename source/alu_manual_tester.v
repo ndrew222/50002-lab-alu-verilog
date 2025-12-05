@@ -26,10 +26,26 @@ module alu_manual_tester (
         .out(alu_out)
     );
 
-    always @(*) begin
+    // io_button indices
+    //   0
+    // 3 1 4
+    //   2
+    //
+    // a[31:16] => 3
+    // a[15:0]  => 0
+    // b[31:16] => 2
+    // b[15:0]  => 4
+    // calculate=> 1
+
+    assign io_led[23:19] = io_button[4:0]; // assign face buttons to io_led [23:19] to see the numbering
+    assign io_led[18:16] = 3'b0;
+    assign io_led[15:0] = io_dip[15:0];
+
+    assign io_segment = 7'hFF;
+    assign io_select = 4'hF;
+
+    always @(posedge clk) begin
         // implement alu tester logic here
-        io_led = 24'b0;
-        io_segment = 7'hFF;
-        io_select = 4'hF;
+
     end
 endmodule

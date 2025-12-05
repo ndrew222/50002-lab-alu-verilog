@@ -76,6 +76,12 @@
                     "type": "DiskFile",
                     "path": "source/shifter.v"
                 }
+            },
+            {
+                "file": {
+                    "type": "DiskFile",
+                    "path": "source/d_flip_flop.v"
+                }
             }
         ],
         "constraintFiles": [
